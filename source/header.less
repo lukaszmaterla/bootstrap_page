@@ -1,0 +1,144 @@
+//main container
+.main-header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: @alternate-bg;
+    z-index: 99;
+    .shadow(0 0 3px 0 rgba(0, 0, 0, 0.2));
+}
+
+//style for 110 px
+.main-header, 
+.header-content, 
+.main-logo, 
+.nav-main, 
+.nav-right,
+h2{
+    height: @header-height-std;
+}
+
+// 60px style header
+.header-short,
+.header-short .header-content,
+.header-short .main-logo, 
+.header-short .nav-main, 
+.header-short .nav-right, h2 {
+    height: @header-height-sm;
+}
+//main style
+.header-content {
+    ul {
+        .list-style-none;
+        li {
+            float: left;
+            a {
+                color: @menu-text-color;
+                font-weight: 700;
+                text-decoration: none;
+                .upper;
+                .basic-transition;
+                &:hover {
+                    color: @menu-hover-color;
+                }
+            }
+        }
+    }
+}
+
+.nav-main {
+    ul {
+        overflow: hidden;
+        .v-align-transform;
+        li {
+            float: left;
+            line-height:  1.4;
+            a {
+                padding: 0 18px;
+            }
+        }
+    }
+}
+//icons on the right
+.nav-right {
+    ul {
+        overflow: hidden;
+        .v-align-transform;
+        margin-left: 20px;
+        li {
+            padding: 0 13px;
+        }
+    }
+}
+
+// logo style 
+.logo-wrapper {
+    display: block;
+
+    h2{
+        display: table-cell;
+        .v-align;
+        font-weight: 700;
+    }
+
+}
+
+.menu-link-active {
+    color: @menu-hover-color !important;
+}
+
+
+//menu mobline
+.mobile-menu {
+    display: none;
+    width: 80%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    background: @dark-bg;
+    padding: 30px 20px 0 30px;
+}
+.mobile-menu-close {
+    transform: translateY(-8px );
+    i {
+        .icon(@bright-text-color; 20px; 1.6);
+        opacity: 0.5;
+        .basic-transition;
+        &:hover{
+            opacity: 1;
+        }
+    }
+}
+.main-nav-list-mobile {
+    .list-style-none;
+    li{
+        margin-bottom:  10px;
+        line-height: 1.4;
+        a {
+            color: @bright-text-color;
+            opacity: 0.5;
+            .basic-transition;
+            text-decoration: none;
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.mobile-nav-button {
+    .v-align-transform;
+    .basic-border (1px; solid; @menu-text-color);
+    border-radius: 2px;
+    padding: 2px 4px;
+    display: table;
+    &:hover {
+        color: @menu-hover-color;
+    }
+    i {
+        .icon(@menu-text-color; 21px; 23px);
+    }
+}
